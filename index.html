@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Happy 19th Birthday Cantikkuu 💗</title>
+
+<style>
+body{
+    margin:0;
+    padding:0;
+    font-family:'Segoe UI',sans-serif;
+    background:linear-gradient(135deg,#ff69b4,#ffc0cb);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+/* floating hearts */
+.bg-heart{
+    position:absolute;
+    animation:float 8s linear infinite;
+    opacity:.6;
+}
+
+@keyframes float{
+    0%{transform:translateY(100vh) scale(.7);opacity:0}
+    10%{opacity:1}
+    100%{transform:translateY(-10vh) scale(1.2);opacity:0}
+}
+
+.card{
+    background:#fff0f5;
+    width:90%;
+    max-width:550px;
+    padding:35px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 15px 35px rgba(255,105,180,.4);
+    z-index:2;
+}
+
+h1{color:#ff1493;font-size:30px}
+h2{color:#ff69b4;font-size:18px}
+p{color:#c71585;line-height:1.8;font-size:15px}
+
+.heart{
+    font-size:45px;
+    animation:beat 1s infinite;
+    margin:20px 0;
+}
+
+@keyframes beat{
+    0%{transform:scale(1)}
+    50%{transform:scale(1.2)}
+    100%{transform:scale(1)}
+}
+
+.page{display:none}
+.page.active{display:block}
+
+.btn{
+    margin:10px;
+    padding:10px 25px;
+    border:none;
+    border-radius:20px;
+    background:#ff69b4;
+    color:#fff;
+    font-size:14px;
+    cursor:pointer;
+}
+
+.btn:hover{background:#ff1493}
+
+img{
+    width:220px;
+    height:220px;
+    border-radius:25px;
+    object-fit:cover;
+    border:5px solid #ff69b4;
+}
+
+/* page dots */
+.dots{
+    margin-top:15px;
+}
+.dot{
+    height:8px;
+    width:8px;
+    background:#ffb6c1;
+    border-radius:50%;
+    display:inline-block;
+    margin:3px;
+}
+.dot.active{
+    background:#ff1493;
+}
+
+/* confetti */
+.confetti{
+    position:absolute;
+    width:8px;
+    height:8px;
+    background:pink;
+    animation:confetti 3s linear infinite;
+}
+@keyframes confetti{
+    0%{transform:translateY(-10vh) rotate(0)}
+    100%{transform:translateY(110vh) rotate(360deg)}
+}
+</style>
+</head>
+
+<body>
+
+<!-- hearts -->
+<script>
+for(let i=0;i<15;i++){
+    let h=document.createElement("div");
+    h.className="bg-heart";
+    h.innerHTML="💗";
+    h.style.left=Math.random()*100+"vw";
+    h.style.fontSize=(16+Math.random()*20)+"px";
+    h.style.animationDelay=Math.random()*8+"s";
+    document.body.appendChild(h);
+}
+</script>
+
+<div class="card">
+
+<!-- PAGE 1 -->
+<div class="page active">
+<h1>🎉 Happy 19th Birthday 🎉</h1>
+<h2>untuk kamu kesayanggankuu 💗</h2>
+<div class="heart">💖</div>
+<p>
+Selamat ulang tahun ke-19, sayangggkuu 🤍<br>
+Hari ini adalah hari di mana dunia kedatangan
+seseorang yang paling aku syukuri kehadirannya.
+</p>
+<button class="btn" onclick="nextPage()">Selanjutnya ➜</button>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page">
+<h1>💗 Untuk Cantikkkuu 💗</h1>
+<p>
+Terima kasih sudah bertahan sejauh ini,
+sudah kuat dengan semua hal yang nggak mudah.
+Aku bangga banget bisa punya pacarr seperti kamu.
+</p>
+<p>
+Di umur yang baru ini,
+semoga semua mimpi kamu satu per satu tercapai.
+Kalau kamu capek,
+ingat yaa… aku selalu ada buat kamu 🤍
+</p>
+<button class="btn" onclick="prevPage()">⟵ Kembali</button>
+<button class="btn" onclick="nextPage()">Selanjutnya ➜</button>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page">
+<h1>🌸 Harapanku 🌸</h1>
+<p>
+Aku nggak janji akan selalu sempurna,
+tapi aku janji akan selalu berusaha.
+Bertahan, belajar, dan tumbuh bareng bersamamuu.
+</p>
+<p>
+Semoga kita bisa terus bareng,
+pelan-pelan tapi pasti 💕
+</p>
+<button class="btn" onclick="prevPage()">⟵ Kembali</button>
+<button class="btn" onclick="nextPage()">Selanjutnya ➜</button>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page">
+<h1>📸 Sayangggkuu Lucu Banget 😆💗</h1>
+<img src="foto-sayangggkuu.jpeg">
+<p>
+Makasih yaa sudah jadi bagian
+paling manis di hidup aku 🤍
+</p>
+<button class="btn" onclick="prevPage()">⟵ Kembali</button>
+<button class="btn" onclick="nextPage()">Selanjutnya ➜</button>
+</div>
+
+<!-- PAGE 5 -->
+<div class="page">
+<h1>💞 I Love You 💞</h1>
+<p>
+Sekali lagi,
+selamat ulang tahun ke-19 sayangggkuu.
+Semoga kamu selalu bahagia,
+dan semoga aku masih bisa
+nemenin kamu di setiap langkahmuu🤍
+</p>
+<div class="heart">💖</div>
+<p>
+Dengan cinta paling tulus,<br>
+dari aku yang sayanggg banget sama kamu 💕
+</p>
+</div>
+
+<div class="dots">
+<span class="dot active"></span>
+<span class="dot"></span>
+<span class="dot"></span>
+<span class="dot"></span>
+<span class="dot"></span>
+</div>
+
+</div>
+
+<script>
+let currentPage=0;
+const pages=document.querySelectorAll(".page");
+const dots=document.querySelectorAll(".dot");
+
+function updateDots(){
+dots.forEach(d=>d.classList.remove("active"));
+dots[currentPage].classList.add("active");
+}
+
+function nextPage(){
+if(currentPage<pages.length-1){
+pages[currentPage].classList.remove("active");
+currentPage++;
+pages[currentPage].classList.add("active");
+updateDots();
+if(currentPage===pages.length-1){
+for(let i=0;i<40;i++){
+let c=document.createElement("div");
+c.className="confetti";
+c.style.left=Math.random()*100+"vw";
+c.style.background=["#ff69b4","#ffc0cb","#ff1493"][Math.floor(Math.random()*3)];
+document.body.appendChild(c);
+}
+}
+}
+}
+
+function prevPage(){
+pages[currentPage].classList.remove("active");
+currentPage--;
+pages[currentPage].classList.add("active");
+updateDots();
+}
+</script>
+
+</body>
+</html>
